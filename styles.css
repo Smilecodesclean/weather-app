@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    .title{
+        font-family: Space Grotesk;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #1A1F2E;
+    }
+}
+.input-text{
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    input{
+        height: 2rem;
+        width: 15rem;
+        border: none;
+        border-radius: 5px;
+        padding: 0.5rem;
+    }
+    button{
+        height: 2rem;
+        width: 3rem;
+        border: none;
+        border-radius: 5px;
+        background-color: #2D8FE0;
+        color: white;
+        cursor: pointer;
+        &:hover{
+            background-color: #035dca;
+        }
+    }
+    ::placeholder{
+        font-family: Inter;
+        font-weight: 400;
+        color: #2A2A2A;
+    }
+}
+#weatherIcon{
+    display: none;
+    width: 100px;
+    height: 100px;
+    animation: comeUp 2s linear;
+}
+@keyframes comeUp {
+    from{
+        opacity: 0;
+        transform: translateY(-700px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+.weather-info{
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    #temperature{
+        font-size: 4rem;
+        font-family: Grotesk;
+        font-weight: 700;
+        color: #1A1F2E;
+    }
+    #cityName{
+        font-size: 1.4rem;
+        font-family: Space Grotesk;
+        font-weight: 700;
+        color: #1A1F2E;
+    }
+    #townName{
+        font-family: Inter;
+        font-weight: 500;
+        font-size: 0.8rem;
+        color: #6B7280;
+    }
+}
+#alert{
+    display: none;
+    color: red;
+    font-size: 0.6rem;
+}
+#description{
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #3A3F4B;
+    text-align: center;
+}
