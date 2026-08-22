@@ -1,4 +1,4 @@
-
+let api_key = "77b459753fb04ce3a53222226261908";
 let weatherinput = document.getElementById("cityInput");
 let searchbtn = document.getElementById("searchButton");
  let city = document.getElementById("cityName");
