@@ -1,4 +1,4 @@
-let api_key = "77b459753fb04ce3a53222226261908";
+
 let weatherinput = document.getElementById("cityInput");
 let searchbtn = document.getElementById("searchButton");
  let city = document.getElementById("cityName");
@@ -8,9 +8,16 @@ let weatherinfo = document.getElementById("weatherInfo");
 let icon = document.getElementById("weatherIcon");
 let alert_msg = document.getElementById("alert");
 let description = document.getElementById("description");
+searchbtn.disabled = true ;
+weatherinput.addEventListener("input",function (){
+     if(weatherinput.value){
+        searchbtn.disabled = false;
+     }
+})
 searchbtn.addEventListener("click", async () => {
     if(!weatherinput.value){
         alert_msg.style.display = "block";
+        alert_msg.textContent = "Input a city/country name";
     }else{
         try{
             let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${api_key}&q=${weatherinput.value}&days=3&aqi=yes&alerts=yes`);
